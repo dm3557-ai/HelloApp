@@ -1,18 +1,18 @@
 public class HelloApp {
     public static void main(String[] args) {
 
-        if (args.length > 0) {
-            System.out.print("Hello, ");
+        if (args.length == 0) {
+            System.out.println("Hello, World!");
+        } else {
+            StringBuilder nameBuilder = new StringBuilder();
 
-            // Enhanced for loop
             for (String name : args) {
-                System.out.print(name + " ");
+                nameBuilder.append(name).append(", ");
             }
 
-            System.out.println("!");
-        } else {
-            System.out.println("Hello, User! Welcome!");
-        }
+            String names = nameBuilder.substring(0, nameBuilder.length() - 2);
 
+            System.out.println("Hello, " + names + "!");
+        }
     }
 }
